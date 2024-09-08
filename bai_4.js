@@ -1,3 +1,15 @@
+function toggleSoKetNoi(){
+    const loaiKhachHang = document.getElementById("loaiKhachHang").value;
+    if(loaiKhachHang == "nhaDan"){
+        soKetNoi.disabled = true;
+        soKetNoi.value = ""; 
+    } else {
+        soKetNoi.disabled = false; 
+      
+    }
+}
+
+
 function Bai4() {
     const loaiKhachHang = document.getElementById("loaiKhachHang").value;
     let soKetNoi = document.getElementById("soKetNoi").value * 1;

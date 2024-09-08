@@ -1,37 +1,83 @@
 .container {
-  padding-top: 50px;
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
 
-.BaiTap {
-  background-color: rgb(109, 149, 205);
+.nav-pills > li > a {
+  color: #495057;
+  font-weight: bold;
+  border-radius: 5px;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-evenly;
+.nav-pills > li.active > a {
+  background-color: #007bff !important;
+  color: #ffffff !important;
 }
 
-.nav li:hover {
-  background-color: rgba(203, 194, 194, 0.445);
+.tab-content .container {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
 }
 
-.nav a {
+.tab-pane {
+  padding-top: 20px;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+button {
+  background-color: #007bff;
   color: white;
-}
-input {
-  height: 20px;
-}
-
-input[type="number"] {
-  height: 30px;
-  width: 150px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.bai_1 ul {
+button:hover {
+  background-color: #0056b3;
+}
+
+.bai_1, .bai_3 {
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.bai_1 option {
-  height: 30px;
-  width: 150px;
+#res_bai1, #res_bai2, #res_bai3, #res_bai4 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .bai_1 ol, .bai_3 ol {
+    flex: 1 1 100%;
+  }
+
+  .bai_1 input, .bai_3 input, .bai_1 select, .bai_3 select {
+    width: 100%;
+  }
 }
