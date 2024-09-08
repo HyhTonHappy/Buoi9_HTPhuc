@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="BaiTap">
+      <div class="container">
+        <ul class="nav nav-pills">
+          <li class="nav-item active">
+            <a class="nav-link" data-toggle="pill" href="#bai1">Bài 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#bai2">Bài 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#bai3">Bài 3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#bai4">Bài 4</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <div class="tab-pane fade in active" id="bai1">
+          <div class="container">
+            <p>Vui lòng nhập các thông tin sau:</p>
+            <ul class="bai_1" style="list-style-type: none; display: flex">
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Điểm chuẩn"
+                  style="border-radius: 5px"
+                  id="diemChuan"
+                />
+              </ol>
+              <ol>
+                <label for="category">Chọn vùng:</label>
+                <select name="category" id="category" onchange="vung()">
+                  <option value="" disabled selected hidden>Chọn vùng</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="X">X</option>
+                </select>
+              </ol>
+              <ol>
+                <label for="category">Đối tượng:</label>
+                <select name="category" id="category_1" onchange="doiTuong()">
+                  <option value="" disabled selected hidden>Đối tượng</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="0">0</option>
+                </select>
+              </ol>
+            </ul>
+
+            <ul class="bai_1" style="list-style-type: none; display: flex">
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Điểm môn 1"
+                  style="border-radius: 5px"
+                  id="diem_1"
+                />
+              </ol>
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Điểm môn 2"
+                  style="border-radius: 5px"
+                  id="diem_2"
+                />
+              </ol>
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Điểm môn 3"
+                  style="border-radius: 5px"
+                  id="diem_3"
+                />
+              </ol>
+            </ul>
+
+            <div style="display: flex; justify-content: left">
+              <button onclick="Bai1()">Tính kết quả</button>
+              <p id="res_bai1"></p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="bai2">
+          <div class="container">
+            <p>Tính tiền điện</p>
+            <input type="number" placeholder="Nhập điện" id="dien" />
+            <div style="display: flex; justify-content: left"></div>
+            <button style="margin-top: 5px" onclick="Bai2()">
+              Tính kết quả
+            </button>
+            <p id="res_bai2"></p>
+          </div>
+        </div>
+
+        <div class="tab-pane fade" id="bai3">
+          <div class="container">
+            <p>Vui lòng nhập các thông tin sau:</p>
+            <ul class="bai_3" style="list-style-type: none; display: flex">
+              <ol>
+                <input
+                  type="text"
+                  placeholder="Họ tên"
+                  style="border-radius: 5px"
+                  id="hoTen"
+                />
+              </ol>
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Tổng thu nhập (triệu)"
+                  style="border-radius: 5px"
+                  id="tongThuNhap"
+                />
+              </ol>
+              <ol>
+                <input
+                  type="number"
+                  placeholder="Số người phụ thuộc"
+                  style="border-radius: 5px"
+                  id="soNguoiPhuThuoc"
+                />
+              </ol>
+            </ul>
+
+            <div style="display: flex; justify-content: left">
+              <button onclick="Bai3()">Tính thuế</button>
+              <p id="res_bai3"></p>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="bai4">
+          <div class="container">
+            <p>Tính hóa đơn tiền cáp</p>
+            <label for="loaiKhachHang">Loại khách hàng:</label>
+            <select
+              name="loaiKhachHang"
+              id="loaiKhachHang"
+              onchange="toggleSoKetNoi()"
+            >
+              <option value="nhaDan">Nhà dân</option>
+              <option value="doanhNghiep">Doanh nghiệp</option>
+            </select>
+
+            <input
+              type="number"
+              placeholder="Số kết nối"
+              id="soKetNoi"
+              disabled
+            />
+            <input type="number" placeholder="Số kênh cao cấp" id="soKenh" />
+
+            <div style="display: flex; justify-content: left">
+              <button onclick="Bai4()">Tính kết quả</button>
+              <p id="res_bai4"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./bai_1.js"></script>
+    <script src="./bai_2.js"></script>
+    <script src="./bai_3.js"></script>
+    <script src="./bai_4.js"></script>
+  </body>
+</html>

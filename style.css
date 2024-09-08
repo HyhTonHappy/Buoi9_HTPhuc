@@ -1,0 +1,37 @@
+.container {
+  padding-top: 50px;
+}
+
+.BaiTap {
+  background-color: rgb(109, 149, 205);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav li:hover {
+  background-color: rgba(203, 194, 194, 0.445);
+}
+
+.nav a {
+  color: white;
+}
+input {
+  height: 20px;
+}
+
+input[type="number"] {
+  height: 30px;
+  width: 150px;
+}
+
+.bai_1 ul {
+  display: flex;
+}
+
+.bai_1 option {
+  height: 30px;
+  width: 150px;
+}
